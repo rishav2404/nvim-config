@@ -21,6 +21,15 @@ map("n", "<S-Right>", "v<Right>", { desc = "Select right" })
 -- Visual mode: Extend visual selection with Shift + Arrow
 map("v", "<S-Left>", "<Left>", { desc = "Extend selection left" })
 map("v", "<S-Right>", "<Right>", { desc = "Extend selection right" })
+
+-- Normal Mode
+map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move line down" })
+map("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move line up" })
+
+-- Visual Mode (Moves selected blocks of text)
+map("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move selection down" })
+map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move selection up" })
+
 -- ============================================================
 -- Debugger
 -- ============================================================
@@ -90,4 +99,3 @@ map("n", "<leader>dh", function()
 end, {
   desc = "Debugger: Inspect variable",
 })
-
