@@ -57,11 +57,11 @@ return {
     },
 
     opts = {
-      completion = {
-        cmp = {
-          enabled = true,
-        },
-      },
+      -- completion = {
+      --   cmp = {
+      --     enabled = true,
+      --   },
+      -- },
 
       popup = {
         border = "rounded",
