@@ -35,3 +35,17 @@ require "autocmds"
 vim.schedule(function()
   require "mappings"
 end)
+
+
+
+-- Enable Rust inlay type hints (Incase not needed comment it down) [Rishav]
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+
+    if client and client.name == "rust-analyzer" then
+      vim.lsp.inlay_hint.enable(true, { bufnr = args.buf })
+    end
+  end,
+})
+--
