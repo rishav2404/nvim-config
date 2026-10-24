@@ -48,13 +48,6 @@ nmap("<leader>rf", function()
   require("conform").format({ async = false })
 end, "Rust: Format")
 
-vim.api.nvim_create_autocmd("BufWritePre", {
-  buffer = 0,
-  callback = function()
-    vim.lsp.buf.format({ async = false })
-  end,
-})
-
 -- ============================================================
 -- Rust indentation settings (2 spaces)
 -- ============================================================
